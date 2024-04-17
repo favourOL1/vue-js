@@ -1,9 +1,11 @@
 <script setup>
+import Forms from './components/Forms.vue';
 import HelloWorld from './components/HelloWorld.vue'
 import MyComponent from './components/MyComponent.vue';
 </script>
 
 <template>
+  <Forms/>
   <MyComponent msg="My first Vue Website" head="My name is Favour"/>
   <HelloWorld msg="Vite + Vue"  head="hello"/>
 </template>

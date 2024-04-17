@@ -1,5 +1,8 @@
 <script setup>
 import { ref } from 'vue'
+import ClassBinding from './ClassBinding.vue';
+import ForBinding from './ForBinding.vue';
+import Event from './Event.vue';
 
 defineProps({
   msg: String,
@@ -9,12 +12,35 @@ defineProps({
 })
 
 const count = ref(0)
+
+const currentId= "Id-01"
+
+const isButtonDisabled=false
+
+const seen=true
+
+const clicked= ()=>{
+  alert('clicked')
+}
+
+
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
+  
+  <Event/>
+
+  <ForBinding/>
+
+  <ClassBinding/>
+
+  <h1  :id="currentId">{{ msg }}</h1>
 
   <h1>{{ head }}</h1>
+
+  <p v-if="seen">Now you see me</p>
+
+  <button v-on:click="clicked":disabled="isButtonDisabled">Button</button>
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
